@@ -1,2 +1,9 @@
-<h1>Words#new</h1>
-<p>Find me in app/views/words/new.html.erb</p>
+<h1 class="text-center">Enter a new Word!</h1>
+
+<%= bootstrap_form_for(@word) do |word| %>
+  <%= word.text_field :word %>
+  <%= word.text_field :cat %>
+  <%= word.text_field :genre %>
+  <%= word.text_field :tense %>
+  <%= word.submit "Submit Word" %>
+<% end %>

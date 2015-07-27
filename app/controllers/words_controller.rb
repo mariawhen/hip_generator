@@ -1,5 +1,4 @@
 class WordsController < ApplicationController
-
   def index
     # @words = Word.all
     @word = Word.where(:cat => "adjective").sample.word + " " + Word.where(:cat => "noun").sample.word
@@ -24,7 +23,7 @@ class WordsController < ApplicationController
   def create
     @word = Word.new(word_params)
     if @word.save
-      redirect_to 'words/index'
+      redirect_to '/'
     else
       render 'new'
     end
@@ -47,7 +46,7 @@ class WordsController < ApplicationController
   private
 
   def word_params
-    params.require(:words).permit(:word, :cat, :tense, :genre)
+    params.require(:word).permit(:word, :cat, :tense, :genre)
   end
 
 end

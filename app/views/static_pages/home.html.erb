@@ -1,16 +1,25 @@
-<div class="jumbotron">
-  <div class="container">
-    <h1>Need a name?</h1>
-    <p>This is a name generator!</p>
 
-    <a href = "/" class="btn btn-primary btn-lg">Work Bitch</a>
+<div class="jumbotron text-center">
+  <h1 class="text-center">Hey There.</h1>
+    <p>Need A Name? This is a <strong>Name Generator!</strong></p>
 
-    <p>
-      <%= @word %>
-     </p>
+  <div id="word-generator">
+    <ul class="text-center list-inline">
+      <li>
+        <a href = "/" class="btn btn-success btn-lg text-center">Generate!</a>
+      </li>
 
+      <li>
+        <h2 class="text-center">
+          <%= @word %>
+        </h2>
+      </li>
+
+    </ul>
   </div>
+
 </div>
+
 
 
 
