@@ -1,8 +1,8 @@
-<h1 class="text-center">Enter a new Word!</h1>
+<h3 class="text-center">Enter a new Word!</h3>
 
 <%= bootstrap_form_for(@word) do |word| %>
   <%= word.text_field :word %>
-  <%= word.text_field :cat %>
+  <%= word.select :cat, ["Noun","Adjective"], {label: "Part of Speech"} %>
   <%= word.text_field :genre %>
   <%= word.text_field :tense %>
   <%= word.submit "Submit Word" %>
