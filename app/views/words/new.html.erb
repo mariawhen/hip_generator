@@ -8,4 +8,12 @@
     <%= word.text_field :tense %>
     <%= word.submit "Submit Word" %>
     <a href="/users/<%= current_user[:id] %>"><button type="button" class="btn">Your Words</button></a>
-  <% end %></div>
+  <% end %>
+
+
+<% flash.each do |name, message| %>
+  <div class="flash-message flash-message-<%= name %>">
+    <%= message %>
+  </div>
+<% end %>
+

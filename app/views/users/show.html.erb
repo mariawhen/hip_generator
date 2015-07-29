@@ -1,7 +1,7 @@
 
 <div id="user-jumbotron" class="jumbotron text-center">
-  <h1 class="text-center">Hi <%= current_user.email %></h1>
-    <p>This is <strong>Your Name Generator!</strong></p>
+  <h1 class="text-center">Hi <%= current_user.email.split('@').first.capitalize %>!</h1>
+    <p>This is <strong>Your</strong> Name Generator!</p>
 
   <div id="word-generator">
     <ul class="text-center list-inline">
@@ -22,31 +22,31 @@
 
 <!-- <h1><%= current_user.email %>'s Home Page</h1> -->
 <div class="container">
-<h2 id="tables-example">Your Added Words</h2>
-
-  <div class="bs-example" data-example-id="simple-table">
-
-    <table class="table">
-      <!-- <caption>Optional table caption.</caption> -->
-      <thead>
-        <tr>
-          <th>Word</th>
-          <th>Category</th>
-          <th>Tense</th>
-          <th>Genre</th>
-        </tr>
-      </thead>
-      <% @user.words.each do |word| %>
-      <tbody>
-        <tr>
-          <th scope="row"><a href="/words/<%=word.id%>/edit"><%= word.word %></a></th>
-          <td><%= word.cat %></td>
-          <td><%= word.tense %></td>
-          <td><%= word.genre %></td>
-        </tr>
-      </tbody>
-      <% end %>
-    </table>
-
-  </div><!-- /example -->
+<h2 id="table-words">Your Added Words
+</h2>
+<div class="whatever">
+    <div class="words" data-id="table">
+     <table class="table">
+        <!-- <caption>Optional table caption.</caption> -->
+        <thead>
+          <tr>
+            <th>Word</th>
+            <th>Category</th>
+            <th>Tense</th>
+            <th>Genre</th>
+          </tr>
+        </thead>
+        <% @user.words.each do |word| %>
+        <tbody>
+          <tr>
+            <th scope="row"><a href="/words/<%=word.id%>/edit"><%= word.word %></a></th>
+            <td><%= word.cat %></td>
+            <td><%= word.tense %></td>
+            <td><%= word.genre %></td>
+          </tr>
+        </tbody>
+        <% end %>
+      </table>
+    </div><!-- /example --></div>
+      <a href = "/words/new" class="btn btn-primary btn-lg btn-block text-center pull-right">Add Word!</a>
 </div>

@@ -24,9 +24,10 @@ class WordsController < ApplicationController
 
   def create
     @word = Word.new(word_params)
+
     @word.user = current_user
     if @word.save
-      redirect_to '/words/new'
+      redirect_to '/words/new', notice: Word.last.word + ' was just added'
     else
       render 'new'
     end

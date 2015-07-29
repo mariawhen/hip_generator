@@ -10,10 +10,5 @@
 <%= render "shared/nav" %>
 <%= yield %>
 
-<% flash.each do |name, message| %>
-  <div class="flash-message flash-message-<%= name %>">
-    <%= message %>
-  </div>
-<% end %>
 </body>
 </html>
