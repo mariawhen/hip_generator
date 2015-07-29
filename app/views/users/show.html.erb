@@ -1,8 +1,30 @@
-<h1><%= current_user.email %> Home Page</h1>
+<!-- <h1><%= current_user.email %>'s Home Page</h1> -->
+<div class="container">
+<h2 id="tables-example">Your Added Words</h2>
 
-<% @user.words.each do |word| %>
-	<span>Word: <%= word.word %></span>
-	<span>Cat: <%= word.cat %></span>
-	<span>Tense: <%= word.tense %></span>
-	<span>Genre: <%= word.genre %></span>
-<% end %>
+  <div class="bs-example" data-example-id="simple-table">
+
+    <table class="table">
+      <!-- <caption>Optional table caption.</caption> -->
+      <thead>
+        <tr>
+          <th>Word</th>
+          <th>Category</th>
+          <th>Tense</th>
+          <th>Genre</th>
+        </tr>
+      </thead>
+      <% @user.words.each do |word| %>
+      <tbody>
+        <tr>
+          <th scope="row"><%= word.word %></th>
+          <td><%= word.cat %></td>
+          <td><%= word.tense %></td>
+          <td><%= word.genre %></td>
+        </tr>
+      </tbody>
+      <% end %>
+    </table>
+
+  </div><!-- /example -->
+</div>
