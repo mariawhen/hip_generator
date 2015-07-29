@@ -1,3 +1,25 @@
+
+<div id="user-jumbotron" class="jumbotron text-center">
+  <h1 class="text-center">Hi <%= current_user.email %></h1>
+    <p>This is <strong>Your Name Generator!</strong></p>
+
+  <div id="word-generator">
+    <ul class="text-center list-inline">
+      <li>
+        <a href = "/users/<%=@user.id%>" class="btn btn-success btn-lg text-center">Generate!</a>
+      </li>
+
+      <li>
+        <h2 class="text-center">
+          <%= @word %>
+        </h2>
+      </li>
+
+    </ul>
+  </div>
+
+</div>
+
 <!-- <h1><%= current_user.email %>'s Home Page</h1> -->
 <div class="container">
 <h2 id="tables-example">Your Added Words</h2>
@@ -17,7 +39,7 @@
       <% @user.words.each do |word| %>
       <tbody>
         <tr>
-          <th scope="row"><%= word.word %></th>
+          <th scope="row"><a href="/words/<%=word.id%>/edit"><%= word.word %></a></th>
           <td><%= word.cat %></td>
           <td><%= word.tense %></td>
           <td><%= word.genre %></td>

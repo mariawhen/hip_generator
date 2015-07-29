@@ -33,17 +33,19 @@ class WordsController < ApplicationController
   end
 
   def update
-    @word = Word.new(word_params)
-    if @word.update_attributes
-      redirect_to 'words/index'
+    @word = Word.find(params[:id])
+    if @word.update_attributes(word_params)
+      redirect_to current_user
     else
       render 'edit'
     end
   end
 
   def destroy
-    @word = Word.find(params[:id]).destroy
-    redirect_to words_path
+    @word = Word.find(params[:id])
+    if @word.delete
+      redirect_to current_user
+    end
   end
 
   private

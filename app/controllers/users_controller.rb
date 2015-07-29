@@ -17,7 +17,15 @@ class UsersController < ApplicationController
     end
   end
 
+  def edit
+    @user = User.find(params[:id])
+  end
+
+  def update
+  end
+
   def show
+    @word = Word.where(:cat => "adjective").sample.word + " " + Word.where(:cat => "noun").sample.word
     @user = User.find(params[:id])
   end
 
@@ -26,4 +34,5 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:email, :password, :password_confirmation)
   end
+
 end

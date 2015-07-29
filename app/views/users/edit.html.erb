@@ -1,2 +1,13 @@
-<h1>Users#edit</h1>
-<p>Find me in app/views/users/edit.html.erb</p>
+<div class="container">
+  <h3 class="text-center">Edit your word: <% @word.word %></h3>
+
+  <%= bootstrap_form_for(@word) do |word| %>
+    <%= word.text_field :word, placeholder: "" %>
+    <%= word.select :cat, ["Noun","Adjective"], {label: "Part of Speech"} %>
+    <%= word.text_field :genre %>
+    <%= word.text_field :tense %>
+    <%= word.submit "Edit Word" %>
+  <% end %>
+
+</div>
+
