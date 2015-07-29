@@ -26,7 +26,7 @@ class WordsController < ApplicationController
     @word = Word.new(word_params)
     @word.user = current_user
     if @word.save
-      redirect_to '/'
+      redirect_to '/words/new'
     else
       render 'new'
     end

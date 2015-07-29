@@ -12,9 +12,8 @@
       <%= word.text_field :genre %>
       <%= word.text_field :tense %>
       <%= word.submit "Edit Word" %>
+      <button type="button" class="btn btn-danger"><%= link_to 'Destroy', @word, method: :delete, data: { confirm: 'Are you sure?' }%></button>
     <% end %>
-
-    <%= link_to 'Destroy', @word, method: :delete, data: { confirm: 'Are you sure?' }%>
 
   </div>
 </div>
