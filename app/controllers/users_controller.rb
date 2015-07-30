@@ -25,6 +25,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    # Used to generate random word (ajective, noun)
     @word = Word.where(:cat => "adjective").sample.word + " " + Word.where(:cat => "noun").sample.word
     @user = User.find(params[:id])
   end

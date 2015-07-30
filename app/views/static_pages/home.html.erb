@@ -1,12 +1,17 @@
-
+<!-- Visitors who are not logged in will only see this -->
 <div class="jumbotron text-center">
-  <h1 class="text-center">Hey There.</h1>
-    <p>Need A Name? This is a <strong>Name Generator!</strong></p>
 
+  <% if logged_in? %>
+    <h1 class="text-center">Hey there <%= current_user.email.split('@').first.capitalize %>!</h1>
+  <% else %>
+    <h1 class="text-center">Hey there Stranger!</h1>
+  <% end %>
+<br>
+<br>
   <div id="word-generator">
     <div class="row">
-      <a href = "/" class="btn btn-success btn-lg text-center">Generate!</a>
-      <div class="randomWord"><h2><%= @word %></h2></div>
+      <a href = "/" class="btn btn-success btn-lg text-center">Generate a name!</a>
+      <div class="randomWord"><h2 class="generated"><%= @word %></h2></div>
     </div>
   </div>
 
