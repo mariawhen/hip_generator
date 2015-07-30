@@ -3,19 +3,11 @@
   <h1 class="text-center">Hey There.</h1>
     <p>Need A Name? This is a <strong>Name Generator!</strong></p>
 
-  <div id="word-generator" class="center-table">
-    <ul class="text-center list-inline">
-      <li>
-        <a href = "/" class="btn btn-success btn-lg text-center">Generate!</a>
-      </li>
-
-      <li>
-        <h2 class="text-center">
-          <%= @word %>
-        </h2>
-      </li>
-    </ul>
-
+  <div id="word-generator">
+    <div class="row">
+      <div class="col-md-6"><a href = "/" class="btn btn-success btn-lg text-center pull-right">Generate!</a></div>
+      <div class="col-md-6"><span class="pull-left"><%= @word %></span></div>
+    </div>
   </div>
 
 </div>

@@ -3,7 +3,7 @@
 
   <%= bootstrap_form_for(@word) do |word| %>
     <%= word.text_field :word %>
-    <%= word.select :cat, ["Noun","Adjective"], {label: "Part of Speech"} %>
+    <%= word.select :cat, ["noun","adjective"], {label: "Part of Speech"} %>
     <%= word.text_field :genre %>
     <%= word.text_field :tense %>
     <%= word.submit "Submit Word" %>

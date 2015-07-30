@@ -4,22 +4,14 @@
     <p>This is <strong>Your</strong> Name Generator!</p>
 
   <div id="word-generator">
-    <ul class="text-center list-inline">
-      <li>
-        <a href = "/users/<%=@user.id%>" class="btn btn-success btn-lg text-center">Generate!</a>
-      </li>
-
-      <li>
-        <h2 class="text-center">
-          <%= @word %>
-        </h2>
-      </li>
-
-    </ul>
+    <div class="row">
+      <div class="col-md-6"><a href = "/users/<%=@user.id%>" class="btn btn-success btn-lg text-center pull-right">Generate!</a></div>
+      <div class="col-md-6"><span class="pull-left"><%= @word %></span></div>
+    </div>
   </div>
 </div>
 
-<div class="container">
+<div class="container add">
         <a href = "/words/new" class="btn btn-primary btn-lg btn-block text-center pull-right">Add Word!</a>
         <br>
         <br>
