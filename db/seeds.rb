@@ -5,6 +5,10 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+######  GENERAL WORD DATABASE  ######
+
+# Gets rid of user added words too IF I rake db:seed
 Word.destroy_all
 
 Word.create(word: 'Esoteric', cat: 'adjective')

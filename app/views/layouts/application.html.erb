@@ -7,13 +7,21 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+
+  <!-- Bootstrap Navigation Bar -->
 <%= render "shared/nav" %>
+<!-- End Nav -->
+
+
 <%= yield %>
+
+<!-- Footer -->
 <footer class="footer">
   <div class="container">
     <p class="text-muted">&copy; Maria Nguyen 2015</p>
   </div>
 </footer>
+<!-- End Footer -->
 
 </body>
 </html>

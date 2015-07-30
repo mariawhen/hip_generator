@@ -1,8 +1,9 @@
 <!-- Visitors who are not logged in will only see this -->
 <div class="jumbotron text-center">
-
+<!-- If User is logged in, display the first part of their email address -->
   <% if logged_in? %>
     <h1 class="text-center">Hey there <%= current_user.email.split('@').first.capitalize %>!</h1>
+ <!-- If not, then display: -->
   <% else %>
     <h1 class="text-center">Hey there Stranger!</h1>
   <% end %>
@@ -11,20 +12,23 @@
   <div id="word-generator">
     <div class="row">
       <a href = "/" class="btn btn-success btn-lg text-center">Generate a name!</a>
+<!-- Generates a random name (adjective, noun) from the Seed file. Work done in static controller -->
       <div class="randomWord"><h2 class="generated"><%= @word %></h2></div>
     </div>
   </div>
 
 </div>
+<!-- If user is logged in, user allowed to see all the words in the general database -->
 <% if logged_in? %>
 <div class="container">
 <h2 id="table-words">
+  <!-- Displays a count of all the words in the general database -->
 <%= @words.count %> Words in the General Database
 </h2>
+<!-- Scrolling bootstrap table for words -->
 <div class="scroll">
     <div class="words" data-id="table">
      <table class="table">
-        <!-- <caption>Optional table caption.</caption> -->
         <thead>
           <tr>
             <th>Word</th>
