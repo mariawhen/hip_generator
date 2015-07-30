@@ -1,17 +1,17 @@
-
 <div id="user-jumbotron" class="jumbotron text-center">
   <h1 class="text-center">Hi <%= current_user.email.split('@').first.capitalize %>!</h1>
     <p>This is <strong>Your</strong> Name Generator!</p>
 
   <div id="word-generator">
     <div class="row">
-      <div class="col-md-6"><a href = "/users/<%=@user.id%>" class="btn btn-success btn-lg text-center pull-right">Generate!</a></div>
-      <div class="col-md-6"><span class="pull-left"><%= @word %></span></div>
+      <a href = "/users/<%=@user.id%>" class="btn btn-success btn-lg text-center">Generate!</a>
+      <div class="randomWord"><h2><%= @word %></h2></div>
     </div>
   </div>
+
 </div>
 
-<div class="container add">
+<div class="container">
         <a href = "/words/new" class="btn btn-primary btn-lg btn-block text-center pull-right">Add Word!</a>
         <br>
         <br>
@@ -26,17 +26,13 @@
        <div class="panel panel-info">
       <% end %>
          <div class="panel-heading">
-           <h3 class="panel-title"><%= word.cat %></h3>
+           <h3 class="panel-title"><%= word.cat.capitalize %></h3>
          </div>
          <div class="panel-body">
-          <a href="/words/<%=word.id%>/edit"><%= word.word %></a>
+          <a href="/words/<%=word.id%>/edit"><%= word.word.capitalize %></a>
          </div>
        </div>
      </div>
      <% end %>
  </div>
 </div>
-
-
-
-

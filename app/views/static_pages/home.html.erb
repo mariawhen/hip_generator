@@ -5,8 +5,8 @@
 
   <div id="word-generator">
     <div class="row">
-      <div class="col-md-6"><a href = "/" class="btn btn-success btn-lg text-center pull-right">Generate!</a></div>
-      <div class="col-md-6"><span class="pull-left"><%= @word %></span></div>
+      <a href = "/" class="btn btn-success btn-lg text-center">Generate!</a>
+      <div class="randomWord"><h2><%= @word %></h2></div>
     </div>
   </div>
 
@@ -14,7 +14,7 @@
 <% if logged_in? %>
 <div class="container">
 <h2 id="table-words">
-<%= @words.count %> Words in the Generator Database
+<%= @words.count %> Words in the General Database
 </h2>
 <div class="scroll">
     <div class="words" data-id="table">
