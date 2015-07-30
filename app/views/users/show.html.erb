@@ -1,5 +1,6 @@
 <!-- This is User profile page, only seen if logged in. Display's beginning of email addres -->
 
+
 <div id="user-jumbotron" class="jumbotron text-center">
   <h1 class="text-center">Hi <%= current_user.email.split('@').first.capitalize %>!</h1>
     <p>This is <strong>Your</strong> Name Generator!</p>
@@ -7,32 +8,51 @@
   <div id="word-generator">
     <div class="row">
       <a href = "/users/<%=@user.id%>" class="btn btn-success btn-lg text-center">Generate a name!</a>
+
       <!-- Generates random word (adjective, noun) from general db AND user added words.  -->
       <!-- Work is done in Users controller -->
+
       <div class="randomWord"><h2 class= 'generated'><%= @word %></h2></div>
     </div>
   </div>
 
 </div>
 
-<div class="container">
+<div id="show" class="container">
+
+<!-- User Word Count, if statement for plurl -->
+
+  <% if @user.words.count == 1 %>
+<h3>You added <%= @user.words.count %> word to the generator. </h3>
+<% else %>
+<h3>You have added <%= @user.words.count %> words.</h3>
+<% end %>
+
   <!-- ADD WORD BUTTON takes you to new word page -->
+
         <a href = "/words/new" class="btn btn-primary btn-lg btn-block text-center pull-right">Add Word!</a>
         <br>
         <br>
         <br>
         <br>
+
  <div class="row">
+
   <!-- LOOP that renders added words into a new Panel-->
+
      <% @user.words.each do |word| %>
      <div class="col-md-6 col-lg-3">
+
     <!-- Changes color according to type(cat) word -->
+
       <% if word.cat == "adjective" %>
        <div class="panel panel-success">
       <% else %>
        <div class="panel panel-info">
       <% end %>
+
     <!-- End change color -->
+
          <div class="panel-heading">
            <h3 class="panel-title"><%= word.cat.capitalize %></h3>
          </div>
