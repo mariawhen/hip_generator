@@ -7,12 +7,12 @@
     <%= word.text_field :genre %>
     <%= word.text_field :tense %>
     <%= word.submit "Submit Word" %>
-    <a href="/users/<%= current_user[:id] %>"><button type="button" class="btn">Your Words</button></a>
+    <a href="/users/<%= current_user[:id] %>"><button type="button" class="btn btn-default">Your Words</button></a>
   <% end %>
-
+<br>
 
 <% flash.each do |name, message| %>
-  <div class="flash-message flash-message-<%= name %>">
+  <div class="flash-message flash-message-<%= name %> alert alert-success">
     <%= message %>
   </div>
 <% end %>

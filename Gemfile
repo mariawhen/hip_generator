@@ -26,6 +26,13 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
+#normalize
+gem 'normalize-rails'
+#skeleton
+gem 'skeleton-rails'
+# google-y materialize
+gem 'materialize-sass'
+
 #bootstrap
 gem 'bootstrap-sass'
 # Use Unicorn as the app server

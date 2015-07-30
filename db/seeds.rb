@@ -46,7 +46,6 @@ Word.create(word: 'Trout', cat: 'noun')
 Word.create(word: 'Mackerel', cat: 'noun')
 Word.create(word: 'Blue Fin', cat: 'noun')
 Word.create(word: 'Flamingo', cat: 'noun')
-Word.create(word: 'Stick', cat: 'noun')
 Word.create(word: 'Barrel', cat: 'noun')
 Word.create(word: 'Squid', cat: 'noun')
 Word.create(word: 'Steer', cat: 'noun')
@@ -56,7 +55,12 @@ Word.create(word: 'Gentleman', cat: 'noun')
 Word.create(word: 'Anchor', cat: 'noun')
 Word.create(word: 'Hands', cat: 'noun')
 Word.create(word: 'Boot', cat: 'noun')
-Word.create(word: 'Bonsai', cat: 'noun')
+Word.create(word: 'Du ma', cat: 'noun')
+Word.create(word: 'Hella Mega Tight', cat: 'noun')
+Word.create(word: 'PhotoHyphy', cat: 'noun')
+Word.create(word: 'Spectre', cat: 'noun')
+Word.create(word: 'Bondoman', cat: 'noun')
+
 
 def generate_words
   Word.where(:cat => "adjective").sample.word + " " + Word.where(:cat => "noun").sample.word

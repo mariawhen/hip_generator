@@ -14,9 +14,7 @@
   <div class="collapse navbar-collapse navbar-ex1-collapse">
     <ul class="nav navbar-nav">
       <% if logged_in? %>
-        <li><%= link_to "Home", user_path(current_user) %></li>
-
-
+        <li><%= link_to "Profile", user_path(current_user) %></li>
       <% end %>
     </ul>
 <!--     <form class="navbar-form navbar-left" role="search">
@@ -32,7 +30,7 @@
         <ul class="dropdown-menu">
             <li><a href="/logout">Log Out</a></li>
           <% else %>
-            <li><a href="/users/new">New User</a></li>
+            <li><a href="/users/new">Sign Up</a></li>
             <li><a href="/login">Log In</a></li>
         </ul>
       </li>

@@ -1,8 +1,4 @@
 <div class="container">
-  <h1>Words#edit</h1>
-  <p>Find me in app/views/words/edit.html.erb</p>
-  <h1>Hi</h1>
-
   <div class="container">
     <h3 class="text-center">Edit your word: <%= @word.word %></h3>
 
@@ -12,7 +8,7 @@
       <%= word.text_field :genre %>
       <%= word.text_field :tense %>
       <%= word.submit "Edit Word" %>
-      <button type="button" class="btn btn-danger"><%= link_to 'Delete', @word, method: :delete, data: { confirm: 'Are you sure?' }%></button>
+      <%= link_to 'Delete', @word, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger"%>
     <% end %>
 
   </div>

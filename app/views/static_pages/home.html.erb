@@ -3,7 +3,7 @@
   <h1 class="text-center">Hey There.</h1>
     <p>Need A Name? This is a <strong>Name Generator!</strong></p>
 
-  <div id="word-generator">
+  <div id="word-generator" class="center-table">
     <ul class="text-center list-inline">
       <li>
         <a href = "/" class="btn btn-success btn-lg text-center">Generate!</a>
@@ -14,13 +14,41 @@
           <%= @word %>
         </h2>
       </li>
-
     </ul>
+
   </div>
 
 </div>
+<% if logged_in? %>
+<div class="container">
+<h2 id="table-words">
+<%= @words.count %> Words in the Generator Database
+</h2>
+<div class="scroll">
+    <div class="words" data-id="table">
+     <table class="table">
+        <!-- <caption>Optional table caption.</caption> -->
+        <thead>
+          <tr>
+            <th>Word</th>
+            <th>Category</th>
+            <th>Tense</th>
+            <th>Genre</th>
+          </tr>
+        </thead>
+        <% @words.each do |word| %>
+        <tbody>
+          <tr>
+            <th scope="row"><%= word.word %></th>
+            <td><%= word.cat %></td>
+            <td><%= word.tense %></td>
+            <td><%= word.genre %></td>
+          </tr>
+        </tbody>
+        <% end %>
+      </table>
+    </div>
+  </div>
 
-
-
-
-
+</div>
+<% end %>
